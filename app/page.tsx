@@ -273,11 +273,12 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-pretty"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
               >
-                Upgrade Your Facility!{" "}
-                <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                  Black November Savings Await!
+                <span className="block mb-2">Upgrade Your</span>
+                <span className="block mb-2">Healthcare Facility!</span>
+                <span className="bg-gradient-to-r from-red-500 via-red-600 to-orange-500 bg-clip-text text-transparent">
+                  Black November Awaits
                 </span>
               </motion.h1>
 
@@ -285,9 +286,13 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed"
+                className="text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed"
               >
-                Accord Medical Supplies Ltd - Your trusted partner for hospital equipment, laboratory equipment, dental equipment, x-ray machines, and medical supplies in bulk. Black November exclusive deals on premium medical equipment.
+                <span className="font-semibold text-white">Premium Medical Equipment</span> at Unbeatable Prices
+                <br />
+                <span className="text-base text-gray-400 mt-2 block">
+                  Hospital Equipment • Laboratory Supplies • Dental Equipment • X-Ray Machines • Medical Supplies in Bulk
+                </span>
               </motion.p>
 
               <div className="flex gap-3 sm:gap-4 flex-wrap">
@@ -295,9 +300,9 @@ export default function Home() {
                   <Link href="/offers">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-red-600/50 hover:shadow-2xl transition-all duration-300 text-sm sm:text-base"
+                      className="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold px-8 sm:px-10 py-4 sm:py-5 rounded-lg shadow-lg hover:shadow-red-600/50 hover:shadow-2xl transition-all duration-300 text-base sm:text-lg"
                     >
-                      🔥 Shop Black November →
+                      🔥 Explore Black November Deals
                     </Button>
                   </Link>
                 </motion.div>

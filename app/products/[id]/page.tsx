@@ -221,6 +221,8 @@ export default function ProductDetailPage() {
               </Card>
             )}
 
+            {/* Price - Hidden as requested */}
+
             {/* Description */}
             <Card className="p-4 sm:p-6 bg-white">
               <h3 className="text-xl font-black text-gray-900 mb-4 flex items-center gap-2">

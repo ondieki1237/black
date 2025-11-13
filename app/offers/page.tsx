@@ -260,43 +260,7 @@ export default function OffersPage() {
                             </p>
                           )}
 
-                          {/* Price - Only show for Homecare category */}
-                          {product.category?.toLowerCase().includes('homecare') && (
-                            <>
-                              <div className="mb-3 bg-gradient-to-r from-blue-50 to-cyan-50 p-2 rounded-lg">
-                                {product.reduced_price && discount > 0 ? (
-                                  <div className="flex items-center justify-between gap-2">
-                                    <div>
-                                      <p className="text-xs text-gray-500 mb-0.5">Now</p>
-                                      <span className="text-lg sm:text-xl font-black text-[#0096d9]">
-                                        KES {Number.parseFloat(product.reduced_price).toLocaleString()}
-                                      </span>
-                                    </div>
-                                    <div className="text-right">
-                                      <p className="text-xs text-gray-500 mb-0.5">Was</p>
-                                      <span className="text-sm text-gray-400 line-through">
-                                        KES {Number.parseFloat(product.price).toLocaleString()}
-                                      </span>
-                                    </div>
-                                  </div>
-                                ) : (
-                                  <div>
-                                    <p className="text-xs text-gray-500 mb-0.5">Price</p>
-                                    <span className="text-lg sm:text-xl font-black text-[#0096d9]">
-                                      KES {Number.parseFloat(product.price).toLocaleString()}
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-
-                              {/* Savings Display */}
-                              {product.reduced_price && discount > 0 && (
-                                <div className="mb-3 text-xs font-semibold text-green-600">
-                                  Save KES {(Number.parseFloat(product.price) - Number.parseFloat(product.reduced_price)).toLocaleString()}
-                                </div>
-                              )}
-                            </>
-                          )}
+                          {/* Price - Hidden as requested */}
 
                           {/* Category Badge */}
                           <div className="mb-3">

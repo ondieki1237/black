@@ -206,25 +206,7 @@ export default function ProductsPage() {
                       </h3>
                       <p className="text-xs sm:text-sm text-gray-600 mb-3">{product.brand}</p>
 
-                      {/* Price - Only show for Homecare category */}
-                      {product.category?.toLowerCase().includes('homecare') && (
-                        <div className="mb-4">
-                          {product.reduced_price ? (
-                            <div className="flex items-center gap-2">
-                              <span className="text-base sm:text-lg font-bold text-[#0096d9]">
-                                KES {Number.parseFloat(product.reduced_price).toLocaleString()}
-                              </span>
-                              <span className="text-xs sm:text-sm text-gray-400 line-through">
-                                KES {Number.parseFloat(product.price).toLocaleString()}
-                              </span>
-                            </div>
-                          ) : (
-                            <span className="text-base sm:text-lg font-bold text-gray-900">
-                              KES {Number.parseFloat(product.price).toLocaleString()}
-                            </span>
-                          )}
-                        </div>
-                      )}
+                      {/* Price - Hidden as requested */}
 
                       {/* Add to Cart Button */}
                       <Button className="w-full bg-gradient-to-r from-[#0096d9] to-blue-700 text-white hover:shadow-lg transition-all text-sm">
