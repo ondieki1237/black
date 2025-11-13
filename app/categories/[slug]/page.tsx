@@ -123,7 +123,7 @@ export default function CategoryProductsPage() {
                       </div>
                     )}
 
-                    {product.reduced_price && (
+                    {product.reduced_price && product.price && Number.parseFloat(product.price) > 0 && Number.parseFloat(product.reduced_price) > 0 && (
                       <div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 rounded-full font-bold text-sm">
                         -
                         {Math.round(

@@ -75,7 +75,7 @@ export default function ProductDetailPage() {
     )
   }
 
-  const discount = product.reduced_price
+  const discount = product.reduced_price && product.price && Number.parseFloat(product.price) > 0 && Number.parseFloat(product.reduced_price) > 0
     ? Math.round(
         ((Number.parseFloat(product.price) - Number.parseFloat(product.reduced_price)) /
           Number.parseFloat(product.price)) *
