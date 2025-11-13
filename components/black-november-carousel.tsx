@@ -201,18 +201,13 @@ export default function BlackNovemberCarousel() {
         </AnimatePresence>
 
         {/* Top Banner */}
-        <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
+        <div className="absolute top-4 left-4 right-4 flex items-center justify-center z-20">
           <div className="bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full border border-cyan-400/50">
             <span className="font-bold text-sm flex items-center gap-2">
               <Zap className="text-cyan-400 fill-cyan-400" size={16} />
               Black November Deals
             </span>
           </div>
-          <Link href="/offers">
-            <button className="bg-gradient-to-r from-[#0096d9] to-cyan-500 text-white px-4 py-2 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-300">
-              View All Offers →
-            </button>
-          </Link>
         </div>
       </div>
 

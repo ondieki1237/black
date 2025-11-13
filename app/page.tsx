@@ -275,9 +275,9 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-pretty"
               >
-                Medical Equipment Suppliers in{" "}
+                Upgrade Your Clinic!!{" "}
                 <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                  Nairobi Kenya
+                  Black November Savings Await!
                 </span>
               </motion.h1>
 
