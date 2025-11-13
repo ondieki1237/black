@@ -275,7 +275,7 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-pretty"
               >
-                Upgrade Your Clinic!!{" "}
+                Upgrade Your Facility!{" "}
                 <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
                   Black November Savings Await!
                 </span>
@@ -396,55 +396,6 @@ export default function Home() {
       <Suspense fallback={<div className="py-20 text-center text-muted-foreground">Loading map...</div>}>
         <OfficeMap />
       </Suspense>
-
-      {/* SEO Content Section */}
-      <section className="py-12 sm:py-16 px-4 md:px-8 lg:px-12 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="prose prose-gray max-w-none"
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Your Trusted Medical Equipment Supplier in Nairobi, Kenya
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Accord Medical Supplies Ltd is a leading medical equipment supplier in Nairobi, Kenya, specializing in providing high-quality hospital equipment, laboratory equipment, dental equipment, and medical supplies to healthcare facilities across the country. With years of experience in the medical equipment industry, we have established ourselves as a reliable partner for hospitals, clinics, diagnostic centers, and healthcare practitioners.
-            </p>
-            
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 mt-6">
-              Comprehensive Medical Equipment Solutions
-            </h3>
-            <p className="text-gray-600 mb-4">
-              We offer a wide range of medical equipment including x-ray machines, digital x-ray systems, portable DR x-ray machines, C-arm x-ray machines, blood gas analyzers, biochemistry analyzers, fully automated chemistry analyzers, dental chairs, dental x-ray units, hospital beds, operating tables, laboratory equipment, and much more. All our products meet international quality standards and come with comprehensive warranty and after-sales support.
-            </p>
-
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 mt-6">
-              Medical Supplies in Bulk - Competitive Prices
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Looking for medical supplies in bulk? We offer competitive prices on bulk orders of medical equipment and supplies. Whether you're setting up a new hospital, upgrading your clinic, or expanding your diagnostic center, our team can provide customized solutions that fit your budget and requirements. Contact us for special pricing on bulk orders.
-            </p>
-
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 mt-6">
-              Why Choose Accord Medical Supplies Ltd?
-            </h3>
-            <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
-              <li>Authorized distributor of leading medical equipment brands</li>
-              <li>Competitive prices on all medical equipment and supplies</li>
-              <li>Fast delivery across Nairobi and Kenya</li>
-              <li>Professional installation and training services</li>
-              <li>Comprehensive after-sales support and maintenance</li>
-              <li>Genuine spare parts and accessories available</li>
-              <li>Experienced technical support team</li>
-            </ul>
-
-            <p className="text-gray-600 mt-6">
-              Visit our showroom in Nairobi or contact us via WhatsApp at <a href="https://wa.me/254729115000" className="text-red-600 hover:underline font-semibold">+254 729 115 000</a> for inquiries, quotes, or to schedule a product demonstration. We're here to help you find the right medical equipment solutions for your healthcare facility.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       <Footer />
     </div>
