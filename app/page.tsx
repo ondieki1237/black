@@ -35,7 +35,7 @@ function DiscountBadge() {
     <motion.div
       role="status"
       aria-label="Discount badge"
-      className="absolute top-4 right-4 bg-[#0096d9] text-white font-extrabold text-sm px-4 py-2 rounded-full shadow-2xl z-50 flex items-center justify-center gap-1 border-2 border-cyan-400"
+      className="absolute top-4 right-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-extrabold text-sm px-4 py-2 rounded-full shadow-2xl z-50 flex items-center justify-center gap-1 border-2 border-red-400"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 14 }}
@@ -145,18 +145,18 @@ function DepartmentCard({ dept, index }: { dept: typeof departments[0]; index: n
         whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
         className="group relative"
       >
-        <Card className="h-full overflow-hidden bg-gradient-to-br from-white to-gray-50 border-2 border-transparent hover:border-[#0096d9] transition-all duration-300 p-4 sm:p-6 cursor-pointer">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-600/0 group-hover:from-blue-500/5 group-hover:to-blue-600/5 transition-all duration-300" />
+        <Card className="h-full overflow-hidden bg-gradient-to-br from-white to-gray-50 border-2 border-transparent hover:border-red-500 transition-all duration-300 p-4 sm:p-6 cursor-pointer">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-600/0 group-hover:from-red-500/5 group-hover:to-red-600/5 transition-all duration-300" />
 
           <div className="relative z-10">
             <motion.div
               whileHover={{ scale: 1.15, rotate: 5 }}
-              className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center mb-4 text-[#0096d9]"
+              className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center mb-4 text-red-600"
             >
               <Icon size={24} />
             </motion.div>
 
-            <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#0096d9] transition-colors">
+            <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
               {dept.name}
             </h3>
             <p className="text-sm text-gray-600 mb-4 leading-relaxed">{dept.description}</p>
@@ -164,10 +164,10 @@ function DepartmentCard({ dept, index }: { dept: typeof departments[0]; index: n
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
-              className="flex items-center gap-2 text-[#0096d9] font-semibold text-sm"
+              className="flex items-center gap-2 text-red-600 font-semibold text-sm"
             >
-              <span className="inline-block bg-blue-100 px-2 py-1 rounded text-[#0096d9] font-bold">Black November</span>
-              <span className="text-[#0096d9]">Shop Now →</span>
+              <span className="inline-block bg-red-100 px-2 py-1 rounded text-red-600 font-bold">Black November</span>
+              <span className="text-red-600">Shop Now →</span>
             </motion.div>
           </div>
         </Card>
@@ -261,7 +261,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="inline-block px-4 py-2 bg-gradient-to-r from-[#0096d9] to-cyan-500 rounded-full border-2 border-cyan-400 shadow-lg"
+                className="inline-block px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 rounded-full border-2 border-red-400 shadow-lg"
               >
                 <span className="text-sm font-bold text-white flex items-center gap-2">
                   <span className="inline-block w-2 h-2 bg-white rounded-full animate-pulse"></span>
@@ -276,7 +276,7 @@ export default function Home() {
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-pretty"
               >
                 Medical Equipment Suppliers in{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
                   Nairobi Kenya
                 </span>
               </motion.h1>
@@ -295,25 +295,11 @@ export default function Home() {
                   <Link href="/offers">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-[#0096d9] to-blue-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-blue-600/50 hover:shadow-2xl transition-all duration-300 text-sm sm:text-base"
+                      className="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-red-600/50 hover:shadow-2xl transition-all duration-300 text-sm sm:text-base"
                     >
                       🔥 Shop Black November →
                     </Button>
                   </Link>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-cyan-400 text-white hover:bg-blue-600/10 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 bg-transparent text-sm sm:text-base"
-                    onClick={() => {
-                      const link = document.createElement("a")
-                      link.href = "/interest"
-                      link.click()
-                    }}
-                  >
-                    Express Interest
-                  </Button>
                 </motion.div>
               </div>
             </div>
@@ -340,7 +326,7 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              Medical Equipment Suppliers in <span className="text-[#0096d9]">Nairobi Kenya</span>
+              Medical Equipment Suppliers in <span className="text-red-600">Nairobi Kenya</span>
             </h2>
             <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-2 mb-6">
               Accord Medical Supplies Ltd is Kenya's leading supplier of hospital equipment, laboratory equipment, dental equipment, and medical supplies in bulk. We serve hospitals, clinics, and healthcare facilities across Nairobi and Kenya.
@@ -374,7 +360,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl sm:text-5xl font-black"
           >
-            Interested in Our <span className="text-cyan-400">Products?</span>
+            Interested in Our <span className="text-red-500">Products?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -393,7 +379,7 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-white to-gray-100 text-[#0096d9] hover:from-gray-50 hover:to-white font-bold px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg transition-all duration-300 shadow-2xl"
+              className="bg-gradient-to-r from-white to-gray-100 text-red-600 hover:from-gray-50 hover:to-white font-bold px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-red-500/20"
               onClick={() => {
                 const link = document.createElement("a")
                 link.href = "/interest"
@@ -454,7 +440,7 @@ export default function Home() {
             </ul>
 
             <p className="text-gray-600 mt-6">
-              Visit our showroom in Nairobi or contact us via WhatsApp at <a href="https://wa.me/254729115000" className="text-[#0096d9] hover:underline">+254 729 115 000</a> for inquiries, quotes, or to schedule a product demonstration. We're here to help you find the right medical equipment solutions for your healthcare facility.
+              Visit our showroom in Nairobi or contact us via WhatsApp at <a href="https://wa.me/254729115000" className="text-red-600 hover:underline font-semibold">+254 729 115 000</a> for inquiries, quotes, or to schedule a product demonstration. We're here to help you find the right medical equipment solutions for your healthcare facility.
             </p>
           </motion.div>
         </div>
