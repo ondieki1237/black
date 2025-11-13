@@ -138,48 +138,111 @@ const departments = [
 function DepartmentCard({ dept, index }: { dept: typeof departments[0]; index: number }) {
   const Icon = dept.icon
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05 }}
-      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-      className="group relative"
-    >
-      <Card className="h-full overflow-hidden bg-gradient-to-br from-white to-gray-50 border-2 border-transparent hover:border-[#0096d9] transition-all duration-300 p-4 sm:p-6 cursor-pointer">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-600/0 group-hover:from-blue-500/5 group-hover:to-blue-600/5 transition-all duration-300" />
+    <Link href="/products" className="block">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.05 }}
+        whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+        className="group relative"
+      >
+        <Card className="h-full overflow-hidden bg-gradient-to-br from-white to-gray-50 border-2 border-transparent hover:border-[#0096d9] transition-all duration-300 p-4 sm:p-6 cursor-pointer">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-600/0 group-hover:from-blue-500/5 group-hover:to-blue-600/5 transition-all duration-300" />
 
-        <div className="relative z-10">
-          <motion.div
-            whileHover={{ scale: 1.15, rotate: 5 }}
-            className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center mb-4 text-[#0096d9]"
-          >
-            <Icon size={24} />
-          </motion.div>
+          <div className="relative z-10">
+            <motion.div
+              whileHover={{ scale: 1.15, rotate: 5 }}
+              className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center mb-4 text-[#0096d9]"
+            >
+              <Icon size={24} />
+            </motion.div>
 
-          <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#0096d9] transition-colors">
-            {dept.name}
-          </h3>
-          <p className="text-sm text-gray-600 mb-4 leading-relaxed">{dept.description}</p>
+            <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#0096d9] transition-colors">
+              {dept.name}
+            </h3>
+            <p className="text-sm text-gray-600 mb-4 leading-relaxed">{dept.description}</p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            className="flex items-center gap-2 text-[#0096d9] font-semibold text-sm"
-          >
-            <span className="inline-block bg-blue-100 px-2 py-1 rounded text-[#0096d9] font-bold">Black November</span>
-            <span className="text-[#0096d9]">Shop Now →</span>
-          </motion.div>
-        </div>
-      </Card>
-    </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              className="flex items-center gap-2 text-[#0096d9] font-semibold text-sm"
+            >
+              <span className="inline-block bg-blue-100 px-2 py-1 rounded text-[#0096d9] font-bold">Black November</span>
+              <span className="text-[#0096d9]">Shop Now →</span>
+            </motion.div>
+          </div>
+        </Card>
+      </motion.div>
+    </Link>
   )
 }
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
 
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Accord Medical Supplies Ltd",
+    "alternateName": "Accord Medical",
+    "description": "Leading medical equipment suppliers in Nairobi, Kenya. We supply hospital equipment, laboratory equipment, dental equipment, imaging equipment, and medical supplies in bulk.",
+    "url": "https://accordmedical.co.ke",
+    "logo": "https://accordmedical.co.ke/logoaccord.png",
+    "image": "https://accordmedical.co.ke/logoaccord.png",
+    "telephone": "+254729115000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Kenya"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Medical Equipment & Supplies",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Laboratory Equipment",
+          "description": "Advanced diagnostic and testing equipment"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Hospital Equipment",
+          "description": "Hospital beds, operating tables, ICU equipment"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Dental Equipment",
+          "description": "Dental chairs, x-ray units, complete dental care solutions"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "X-Ray Machines",
+          "description": "Digital x-ray machines, portable DR x-ray, C-arm x-ray machines"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Medical Analyzers",
+          "description": "Blood gas analyzer, biochemistry analyzer, fully automated chemistry analyzer"
+        }
+      ]
+    },
+    "priceRange": "$$",
+    "keywords": "medical equipment suppliers nairobi, hospital equipment kenya, medical supplies nairobi, laboratory equipment, dental equipment, x-ray machine, biochemistry analyzer"
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
       <Navbar />
 
       <CountdownTimer />
@@ -215,9 +278,9 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-pretty"
               >
-                Black November —{" "}
+                Medical Equipment Suppliers in{" "}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Limited Time Deals
+                  Nairobi Kenya
                 </span>
               </motion.h1>
 
@@ -227,7 +290,7 @@ export default function Home() {
                 transition={{ delay: 0.3 }}
                 className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed"
               >
-                Massive discounts and exclusive bundles during Black November. Shop with us and get priority delivery.
+                Accord Medical Supplies Ltd - Your trusted partner for hospital equipment, laboratory equipment, dental equipment, x-ray machines, and medical supplies in bulk. Black November exclusive deals on premium medical equipment.
               </motion.p>
 
               <div className="flex gap-3 sm:gap-4 flex-wrap">
@@ -280,10 +343,13 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              Shop by <span className="text-[#0096d9]">Department</span>
+              Medical Equipment Suppliers in <span className="text-[#0096d9]">Nairobi Kenya</span>
             </h2>
-            <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto px-2">
-              Explore our comprehensive range of medical equipment across all departments
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-2 mb-6">
+              Accord Medical Supplies Ltd is Kenya's leading supplier of hospital equipment, laboratory equipment, dental equipment, and medical supplies in bulk. We serve hospitals, clinics, and healthcare facilities across Nairobi and Kenya.
+            </p>
+            <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto px-2">
+              Browse our comprehensive range of medical equipment including x-ray machines, C-arm machines, blood gas analyzers, biochemistry analyzers, and fully automated chemistry analyzers at competitive prices.
             </p>
           </motion.div>
 
@@ -347,6 +413,55 @@ export default function Home() {
       <Suspense fallback={<div className="py-20 text-center text-muted-foreground">Loading map...</div>}>
         <OfficeMap />
       </Suspense>
+
+      {/* SEO Content Section */}
+      <section className="py-12 sm:py-16 px-4 md:px-8 lg:px-12 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="prose prose-gray max-w-none"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Your Trusted Medical Equipment Supplier in Nairobi, Kenya
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Accord Medical Supplies Ltd is a leading medical equipment supplier in Nairobi, Kenya, specializing in providing high-quality hospital equipment, laboratory equipment, dental equipment, and medical supplies to healthcare facilities across the country. With years of experience in the medical equipment industry, we have established ourselves as a reliable partner for hospitals, clinics, diagnostic centers, and healthcare practitioners.
+            </p>
+            
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 mt-6">
+              Comprehensive Medical Equipment Solutions
+            </h3>
+            <p className="text-gray-600 mb-4">
+              We offer a wide range of medical equipment including x-ray machines, digital x-ray systems, portable DR x-ray machines, C-arm x-ray machines, blood gas analyzers, biochemistry analyzers, fully automated chemistry analyzers, dental chairs, dental x-ray units, hospital beds, operating tables, laboratory equipment, and much more. All our products meet international quality standards and come with comprehensive warranty and after-sales support.
+            </p>
+
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 mt-6">
+              Medical Supplies in Bulk - Competitive Prices
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Looking for medical supplies in bulk? We offer competitive prices on bulk orders of medical equipment and supplies. Whether you're setting up a new hospital, upgrading your clinic, or expanding your diagnostic center, our team can provide customized solutions that fit your budget and requirements. Contact us for special pricing on bulk orders.
+            </p>
+
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 mt-6">
+              Why Choose Accord Medical Supplies Ltd?
+            </h3>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
+              <li>Authorized distributor of leading medical equipment brands</li>
+              <li>Competitive prices on all medical equipment and supplies</li>
+              <li>Fast delivery across Nairobi and Kenya</li>
+              <li>Professional installation and training services</li>
+              <li>Comprehensive after-sales support and maintenance</li>
+              <li>Genuine spare parts and accessories available</li>
+              <li>Experienced technical support team</li>
+            </ul>
+
+            <p className="text-gray-600 mt-6">
+              Visit our showroom in Nairobi or contact us via WhatsApp at <a href="https://wa.me/254729115000" className="text-[#0096d9] hover:underline">+254 729 115 000</a> for inquiries, quotes, or to schedule a product demonstration. We're here to help you find the right medical equipment solutions for your healthcare facility.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       <Footer />
     </div>
