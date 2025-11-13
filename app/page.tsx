@@ -24,7 +24,6 @@ import {
   BookOpen,
   Zap,
 } from "lucide-react"
-import CountdownTimer from "@/components/countdown-timer"
 
 // Lazy load components that are below the fold
 const OfficeMap = lazy(() => import("@/components/office-map"))
@@ -244,8 +243,6 @@ export default function Home() {
       />
       
       <Navbar />
-
-      <CountdownTimer />
 
       {/* Hero section */}
       <motion.section
