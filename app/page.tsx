@@ -135,7 +135,7 @@ const departments = [
   },
 ]
 
-function DepartmentCard({ dept, index }) {
+function DepartmentCard({ dept, index }: { dept: typeof departments[0]; index: number }) {
   const Icon = dept.icon
   return (
     <motion.div

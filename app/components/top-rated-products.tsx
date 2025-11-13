@@ -19,7 +19,7 @@ interface Product {
 }
 
 interface TopRatedProductsProps {
-  productIds?: string[]
+  productIds?: number[]
 }
 
 export default function TopRatedProducts({ productIds }: TopRatedProductsProps) {
