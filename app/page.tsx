@@ -42,7 +42,7 @@ function DiscountBadge() {
       whileHover={{ scale: 1.1 }}
     >
       <Zap size={16} className="animate-pulse" />
-      Upto -35
+      Upto Upto -35
     </motion.div>
   )
 }

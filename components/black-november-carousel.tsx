@@ -157,7 +157,7 @@ export default function BlackNovemberCarousel() {
                       {/* 35% Off Badge for all Black November products */}
                       <div className="absolute top-2 right-2 bg-gradient-to-r from-[#0096d9] to-cyan-500 text-white px-2 py-1 rounded-full font-black text-xs shadow-lg flex items-center gap-1 border border-cyan-300">
                         <Zap size={10} className="fill-white" />
-                        -35%
+                        Upto -35%
                       </div>
 
                       {/* Product Info - Visible on Hover */}

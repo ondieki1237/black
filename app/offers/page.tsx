@@ -234,7 +234,7 @@ export default function OffersPage() {
                           {/* 35% Off Badge for all Black November products */}
                           <div className="absolute top-3 right-3 bg-gradient-to-r from-[#0096d9] to-cyan-500 text-white px-3 py-1.5 rounded-full font-black text-sm shadow-lg flex items-center gap-1 border-2 border-cyan-300">
                             <Zap size={14} className="fill-white" />
-                            -35%
+                            Upto -35%
                           </div>
 
                           {/* Featured Badge */}
